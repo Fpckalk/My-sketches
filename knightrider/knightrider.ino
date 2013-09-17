@@ -7,7 +7,7 @@
 
 int pins[] = { 2, 3, 4, 5, 6 };
 int i = 0;
-int timer = 25;
+int timer = 30;
 
 // the setup routine runs once when you press reset:
 void setup() {
@@ -26,14 +26,12 @@ void loop() {
     digitalWrite(pins[i], HIGH);   // turn the LED on (HIGH is the voltage level)
     delay(timer);               // wait for a second
     digitalWrite(pins[i], LOW);    // turn the LED off by making the voltage LOW
-    delay(timer); 
   }
   
   for ( i=4; i>=0; i-- ) {
     digitalWrite(pins[i], HIGH);   // turn the LED on (HIGH is the voltage level)
     delay(timer);               // wait for a second
     digitalWrite(pins[i], LOW);    // turn the LED off by making the voltage LOW
-    delay(timer); 
   }
   
 }
