@@ -27,11 +27,13 @@ const int analogOutPin = 9; // Analog output pin that the LED is attached to
 int sensorValue = 0;        // value read from the pot
 int outputValue = 0;        // value output to the PWM (analog out)
 
+int pins[] = {9, 10, 11, 12, 13};
+
 void setup() {
   // initialize serial communications at 9600 bps:
   Serial.begin(9600); 
-  for(int i = 9; i <= 13; i++) {
-    pinMode(i, OUTPUT); 
+  for(int i = 0; i < 5; i++) {
+    pinMode(pins[i], OUTPUT); 
   }
 }
 
@@ -56,11 +58,11 @@ void loop() {
 }
 
 void ledOn(int leds){
-   for(int i = 9; i <= 13; i++) {
-     if(i <= (leds + 2)) {
-       digitalWrite(i, HIGH);
+   for(int i = 0; i < 5; i++) {
+     if(i < leds) {
+       digitalWrite(pins[i], HIGH);
      } else {
-       digitalWrite(i, LOW); 
+       digitalWrite(pins[i], LOW); 
      }
    }
 }
